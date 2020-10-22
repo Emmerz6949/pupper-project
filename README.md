@@ -1,4 +1,16 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Pupper 
+
+## Table of Contents 
+* [Description](#Description)
+* [Available Scripts](#Available-Scripts)
+* [Features](#Features)
+* [Learn More](#Learn-More)
+* [Contributors](#Contributors)
+* [License](#License)
+
+## Description
+Sometimes our days can become busy. If you're a pet owner, becoming too busy can get in the way of walking your dog. Pupper is an app that allows pet owners and walkers come together to give your doggo the walk they need when they need it. With Pupper, pet owners can request a walker and be matched according to dog size and schedule availability. Once matched, owners and walkers can communicate via email to coordinate scheduling and reoccurence. 
+
 
 ## Available Scripts
 
@@ -39,6 +51,8 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Learn More
 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
@@ -66,3 +80,14 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## Contributors 
+The following developers contributed to the project. Click on their name to be directed to their github profiles! 
+
+[Emmalee Barnett](https://github.com/Emmerz6949) 
+[Mayo Dada](https://github.com/mayodee597)
+[Kelsey Hughes](https://github.com/kelbri10)
+[Ted Lonczak](https://github.com/tedlon2314) 
+
+## License 
+This project is licensed under MIT. 
