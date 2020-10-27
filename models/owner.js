@@ -44,6 +44,15 @@ const Owner = sequelize.define("Owner", {
       unique: false
     }
   });
+
+  Owner.associate = function (models) {
+    // Associating Owner with Walker
+
+    Owner.hasMany(models.Walker, {
+
+    });
+  };
+
   // Creating a custom method for our Owner model. This will check if an unhashed password entered by the Owner can be compared to the hashed password stored in our database
   Owner.prototype.validPassword = function (password) {
     return bcrypt.compareSync(password, this.password);
