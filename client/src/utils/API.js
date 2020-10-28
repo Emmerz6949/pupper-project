@@ -1,5 +1,8 @@
 import axios from "axios";
 
 export default {
-    //axios calls to the api folder within the routes folder
+    //sends email
+    sendMail: function(mailInfo) {
+        return axios.post("/api/mail", mailInfo);
+    }
 };
