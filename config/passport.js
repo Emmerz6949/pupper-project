@@ -1,10 +1,10 @@
-const passportO = require("passport");
+const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 
 const db = require("../models");
 
 // Telling passport we want to use a Local Strategy. In other words, we want login with a username/email and password
-passportO.use(
+passport.use(
   new LocalStrategy(
     // Our owner will sign in using an email, rather than a "username"
     {
@@ -19,6 +19,26 @@ passportO.use(
       }).then(dbOwner => {
         // If there's no owner with the given email
         if (!dbOwner) {
+            db.Walker.findOne({
+                where: {
+                  email: email
+                }
+              }).then(dbWalker => {
+                // If there's no walker with the given email
+                if (!dbWalker) {
+                  return done(null, false, {
+                    message: "Incorrect email."
+                  });
+                }
+                // If there is a walker with the given email, but the password the walker gives us is incorrect
+                else if (!dbWalker.validPassword(password)) {
+                  return done(null, false, {
+                    message: "Incorrect password."
+                  });
+                }
+                // If none of the above, return the walker
+                return done(null, dbWalker);
+              });
           return done(null, false, {
             message: "Incorrect email."
           });
@@ -39,13 +59,13 @@ passportO.use(
 // In order to help keep authentication state across HTTP requests,
 // Sequelize needs to serialize and deserialize the owner
 // Just consider this part boilerplate needed to make it all work
-passportO.serializeOwner((owner, cb) => {
+passport.serializeUser((owner, cb) => {
   cb(null, owner);
 });
 
-passportO.deserializeOwner((obj, cb) => {
+passport.deserializeUser((obj, cb) => {
   cb(null, obj);
 });
 
 // Exporting our configured passport
-module.exports = passportO;
+module.exports = passport;
