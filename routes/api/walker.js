@@ -8,7 +8,7 @@ module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the owner will be sent an error
-  app.post("/api/login", passport.authenticate("local"), (req, res) => {
+  app.post("/api/walker_login", passport.authenticate("local"), (req, res) => {
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
       email: req.Owner.email,
@@ -19,7 +19,7 @@ module.exports = function(app) {
   // Route for signing up the Walker. The walker's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the walker is created successfully, proceed to log the user in,
   // otherwise send back an error
-  app.post("/api/signup", (req, res) => {
+  app.post("/api/walker_signup", (req, res) => {
     db.Walker.create({
       email: req.body.email,
       password: req.body.password
@@ -39,7 +39,7 @@ module.exports = function(app) {
   });
 
   // Route for getting some data about our Walker to be used client side
-  app.get("/api/Walker_data", (req, res) => {
+  app.get("/api/walker_data", (req, res) => {
     if (!req.Walker) {
       // The Walker is not logged in, send back an empty object
       res.json({});
@@ -47,13 +47,37 @@ module.exports = function(app) {
       // Otherwise send back the Walker's email and id
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
-          firstName: req.walker.firstName,
-          lastName: req.walker.lastName,
+        firstName: req.walker.firstName,
+        lastName: req.walker.lastName,
         email: req.Walker.email,
         zipcode: req.walker.zipcode,
         dogSize: req.Walker.dogSize,
         id: req.Walker.id
       });
     }
+  });
+
+  app.put("/api/add_owner_profile", function(req, res) {
+    db.Owner.update(
+      req.body,
+      {
+        where: {
+          id: req.body.id
+        }
+      }).then(function(dbOwner) {
+      res.json(dbOwner);
+    });
+  });
+
+  app.put("/api/add_owner_schedule", function(req, res) {
+    db.Owner.update(
+      req.body,
+      {
+        where: {
+          id: req.body.id
+        }
+      }).then(function(dbOwner) {
+      res.json(dbOwner);
+    });
   });
 };
