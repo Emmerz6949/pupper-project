@@ -10,18 +10,24 @@ const Owner = sequelize.define("Owner", {
 
     dogName: {
       type: DataTypes.STRING,
-      allowNull: false,
-      unique: true
+      allowNull: true,
+      unique: false
+    },
+
+    lastName: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      unique: false
     },
 
     dogBreed: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
 
-    dogAge: {
+    dogSize: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       unique: false
     },
 
@@ -38,9 +44,16 @@ const Owner = sequelize.define("Owner", {
       type: DataTypes.STRING,
       allowNull: false
     },
+
     zipcode: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
+      unique: false
+    },
+
+    schedule: {
+      type: DataTypes.DATE,
+      allowNull: true,
       unique: false
     }
   });

@@ -1,13 +1,13 @@
 import React from 'react';
 import Container from '@material-ui/core/Container'; 
-import ScheduleBar from '../src/components/ScheduleBar'; 
+import ScheduleBar from '../components/schedule components/ScheduleBar'; 
 //import SchedulePicker from '../src/components/DateTimePicker'; 
 import { makeStyles } from '@material-ui/core/styles'; 
-import LocationTextField from './components/LocationTextField';
-import './App.css';
-import WalkButton from './components/WalkButton';
-import SchedulePicker from './components/DateTimePicker';
-import SwitchLabels from './components/TimeOfDay';
+import LocationTextField from '../components/schedule components/LocationTextField';
+import '../App.css';
+import WalkButton from '../components/schedule components/WalkButton';
+import SchedulePicker from '../components/schedule components/DateTimePicker';
+import SwitchLabels from '../components/schedule components/TimeOfDay';
 
 const useStyles = makeStyles((theme) => ({
   page: { 
@@ -23,7 +23,7 @@ function Schedule() {
 
   return (
    
-    <Container maxWidth>
+    <Container>
       
       <div className ={classes.page}>
   

@@ -7,10 +7,16 @@ const Walker = sequelize.define("Walker", {
 
     // The email cannot be null, and must be a proper email before creation
 
-    name: {
+    firstName: {
       type: DataTypes.STRING,
-      allowNull: false,
-      unique: true
+      allowNull: true,
+      unique: false
+    },
+
+    lastName: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      unique: false
     },
 
     email: {
@@ -29,7 +35,13 @@ const Walker = sequelize.define("Walker", {
 
     zipcode: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
+      unique: false
+    },
+    
+    dogSize: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
       unique: false
     }
 
@@ -59,6 +71,3 @@ const Walker = sequelize.define("Walker", {
   });
   return Walker;
 };
-
-
-
