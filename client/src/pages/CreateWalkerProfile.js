@@ -13,17 +13,22 @@ import TextFieldSizesWalker from "../components/walkerForm.js";
 import AlertDialog from "../components/pickWalker.js";
 import AlertDialogWalker from "../components/walkerScheduleSet.js";
 import IconLabelButtonsProfile from '../components/button.js';
+import AlertDialogNoResults from '../components/noResults.js';
+import WalkerProfileInfo from '../components/WalkerProfileInfo';
 
 function CreateWalkerProfile() {
   return (
   
     <Grid container direction="column" justify="center" alignItems="center" >
       <div className="App">
+      <h1> Create Dog Profile</h1>
         <ButtonAppBar /> 
         <TextFieldSizesWalker />
         <DiscreteSliderWalker/>
         <IconLabelButtonsProfile/> 
-        
+        < AlertDialog />
+        < AlertDialogNoResults/>
+        <WalkerProfileInfo/>
 
       </div>
     </Grid>

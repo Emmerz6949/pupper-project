@@ -18,9 +18,9 @@ export default function TextFieldSizesWalker() {
 
   return (
     <form className={classes.root} noValidate autoComplete="off">
-      <Grid container alignItems="center">
+      <Grid container alignItems="center" >
       <div>
-      <h1> Create Walker Profile</h1>
+      
         <TextField label="First Name" id="standard-size-small" defaultValue="" size="small" />
         <TextField label="Last Name" id="standard-size-small" defaultValue="" size="small" />
         <TextField label="Email" id="standard-size-small" defaultValue="" size="small" />
