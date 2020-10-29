@@ -24,6 +24,7 @@ export default function TextFieldSizesDog() {
         <TextField label="Dog Name" id="standard-size-small" defaultValue="" size="small" />
         <TextField label="Dog Last Name" id="standard-size-small" defaultValue="" size="small" />
         <TextField label="Dog Breed" id="standard-size-small" defaultValue="" size="small" />
+        <TextField label="Email" id="standard-size-small" defaultValue="" size="small" />
         <TextField label="ZipcCode" id="standard-size-small" defaultValue="" size="small" />
       </div>
       </Grid>
