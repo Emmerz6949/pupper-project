@@ -1,12 +1,12 @@
 import React from 'react';
 import Container from '@material-ui/core/Container'; 
-import ScheduleBar from '../src/components/ScheduleBar';  
+import ScheduleBar from '../components/schedule components/ScheduleBar';  
 import { makeStyles } from '@material-ui/core/styles'; 
-import LocationTextField from '../schedule components/LocationTextField';
+import LocationTextField from '../components/schedule components/LocationTextField';
 import './App.css';
-import ScheduleButton from '../schedule components/ScheduleButton';
-import SchedulePicker from '../schedule components/DateTimePicker';
-import SwitchLabels from '../schedule components/TimeOfDay';
+import ScheduleButton from '../components/schedule components/ScheduleButton';
+import SchedulePicker from '../components/schedule components/DateTimePicker';
+import SwitchLabels from '../components/schedule components/TimeOfDay';
 
 const useStyles = makeStyles((theme) => ({
   page: { 
