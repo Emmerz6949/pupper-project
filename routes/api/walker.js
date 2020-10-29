@@ -40,7 +40,7 @@ module.exports = function(app) {
 
   // Route for getting some data about our Walker to be used client side
   app.get("/api/walker_data", (req, res) => {
-    if (!req.Walker) {
+    if (!req.walker) {
       // The Walker is not logged in, send back an empty object
       res.json({});
     } else {
@@ -49,35 +49,35 @@ module.exports = function(app) {
       res.json({
         firstName: req.walker.firstName,
         lastName: req.walker.lastName,
-        email: req.Walker.email,
+        email: req.walker.email,
         zipcode: req.walker.zipcode,
-        dogSize: req.Walker.dogSize,
-        id: req.Walker.id
+        dogSize: req.walker.dogSize,
+        id: req.walker.id
       });
     }
   });
 
-  app.put("/api/add_owner_profile", function(req, res) {
-    db.Owner.update(
+  app.put("/api/add_walker_profile", function(req, res) {
+    db.Walker.update(
       req.body,
       {
         where: {
           id: req.body.id
         }
-      }).then(function(dbOwner) {
-      res.json(dbOwner);
+      }).then(function(dbWalker) {
+      res.json(dbWalker);
     });
   });
 
-  app.put("/api/add_owner_schedule", function(req, res) {
-    db.Owner.update(
+  app.put("/api/add_walker_schedule", function(req, res) {
+    db.Walker.update(
       req.body,
       {
         where: {
           id: req.body.id
         }
-      }).then(function(dbOwner) {
-      res.json(dbOwner);
+      }).then(function(dbWalker) {
+      res.json(dbWalker);
     });
   });
 };
