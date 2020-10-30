@@ -18,7 +18,10 @@ function CreateDogProfile() {
         <ButtonAppBar />
         <TextFieldSizes />
         <DiscreteSlider />
+
+ 
         <IconLabelButtonsProfile/>
+        
         
           
       </div>

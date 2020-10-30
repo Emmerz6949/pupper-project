@@ -3,7 +3,7 @@ import Container from '@material-ui/core/Container';
 import ScheduleBar from '../components/schedule components/ScheduleBar';  
 import { makeStyles } from '@material-ui/core/styles'; 
 import LocationTextField from '../components/schedule components/LocationTextField';
-import './App.css';
+import '../App.css';
 import ScheduleButton from '../components/schedule components/ScheduleButton';
 import SchedulePicker from '../components/schedule components/DateTimePicker';
 import SwitchLabels from '../components/schedule components/TimeOfDay';
