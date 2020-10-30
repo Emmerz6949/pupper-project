@@ -24,9 +24,31 @@ if (process.env.NODE_ENV === "production") {
 
 // Add routes, both API and view
 app.use(routes);
+require("./routes/api/owner");
+require("./routes/api/walker");
 
 // Start the API server
 db.sequelize.sync().then(() => {
+
+  db.Owner.create({
+    email: "suzi@example.com",
+    password: "suziQ789",
+    dogName: "Rufus", 
+    lastName: "Ruff", 
+    dogBreed: "Dalmation", 
+    dogSize: 50,
+    zipcode: 78950
+  });
+
+  db.Walker.create({
+    email: "kyle@example.com",
+    password: "kyle666",
+    firstName: "Kyle", 
+    lastName: "Walkson", 
+    dogSize: 33,
+    zipcode: 78950
+  });
+
   app.listen(PORT, function() {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
   });
