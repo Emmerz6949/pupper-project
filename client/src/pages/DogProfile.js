@@ -10,7 +10,8 @@ import Grid from '@material-ui/core/Grid';
 import WalkerProfileInfo from '../components/WalkerProfileInfo.js';
 import EditButton from '../components/editButton.js';
 import DogProfileInfo from '../components/DogProfileInfo.js';
-
+import WalkButton from '../components/schedule components/WalkButton'; 
+import { Link } from 'react-router-dom'; 
 function DogProfile() {
   return (
 
@@ -19,7 +20,9 @@ function DogProfile() {
         <ButtonAppBar />
         <DogProfileInfo/>
         <EditButton/>
-        
+        <Link to='/dogschedule'>
+        <WalkButton/>
+        </Link>
         
           
       </div>

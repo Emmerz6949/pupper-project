@@ -22,7 +22,7 @@ export default function WalkButton() {
                 fullWidth
                 type = 'submit'>
     
-                Schedule Availbility
+                Go For A Walk
             </Button>
         </div>
 
