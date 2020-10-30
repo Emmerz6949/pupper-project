@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Kakashi6949^",
+    "password": null,
     "database": "pupper_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
