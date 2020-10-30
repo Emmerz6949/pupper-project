@@ -29,7 +29,7 @@ require("./routes/api/walker");
 
 // Start the API server
 db.sequelize.sync().then(() => {
-
+ 
   db.Owner.create({
     email: "suzi@example.com",
     password: "suziQ789",
