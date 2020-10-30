@@ -28,7 +28,6 @@ function SignIn() {
                 <LoginTextFields />
                 <SignInButton />
 
-                <SignInFooter />
             </div> 
         </Container>
     )
