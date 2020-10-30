@@ -4,67 +4,77 @@ const LocalStrategy = require("passport-local").Strategy;
 const db = require("../models");
 
 // Telling passport we want to use a Local Strategy. In other words, we want login with a username/email and password
-passport.use(
-  new LocalStrategy(
-    // Our owner will sign in using an email, rather than a "username"
-    {
-      usernameField: "email"
-    },
-    (email, password, done) => {
-      // When a owner tries to sign in this code runs
-      db.Owner.findOne({
-        where: {
-          email: email
-        }
-      }).then(dbOwner => {
-        // If there's no owner with the given email
-        if (!dbOwner) {
-            db.Walker.findOne({
+passport.use('local-owner',
+    new LocalStrategy(
+        // Our owner will sign in using an email, rather than a "username"
+        {
+            usernameField: "email"
+        },
+        async (email, password, done) => {
+            // When a owner tries to sign in this code runs
+            const dbOwner = await db.Owner.findOne({
                 where: {
-                  email: email
+                    email: email
                 }
-              }).then(dbWalker => {
-                // If there's no walker with the given email
-                if (!dbWalker) {
-                  return done(null, false, {
+            });
+
+            if (!dbOwner) {
+                return done(null, false, {
                     message: "Incorrect email."
-                  });
-                }
-                // If there is a walker with the given email, but the password the walker gives us is incorrect
-                else if (!dbWalker.validPassword(password)) {
-                  return done(null, false, {
+                });
+
+            }
+
+            if (!dbOwner.validPassword(password)) {
+                return done(null, false, {
                     message: "Incorrect password."
-                  });
+                });
+            }
+
+            return done(null, dbOwner);
+        })
+);
+
+passport.use('local-walker',
+    new LocalStrategy(
+        // Our owner will sign in using an email, rather than a "username"
+        {
+            usernameField: "email"
+        },
+        async (email, password, done) => {
+            // When a owner tries to sign in this code runs
+            const dbWalker = await db.Walker.findOne({
+                where: {
+                    email: email
                 }
-                // If none of the above, return the walker
-                return done(null, dbWalker);
-              });
-          return done(null, false, {
-            message: "Incorrect email."
-          });
-        }
-        // If there is a owner with the given email, but the password the owner gives us is incorrect
-        else if (!dbOwner.validPassword(password)) {
-          return done(null, false, {
-            message: "Incorrect password."
-          });
-        }
-        // If none of the above, return the owner
-        return done(null, dbOwner);
-      });
-    }
-  )
+            });
+
+            if (!dbWalker) {
+                return done(null, false, {
+                    message: "Incorrect email."
+                });
+
+            }
+
+            if (!dbWalker.validPassword(password)) {
+                return done(null, false, {
+                    message: "Incorrect password."
+                });
+            }
+
+            return done(null, dbWalker);
+        })
 );
 
 // In order to help keep authentication state across HTTP requests,
 // Sequelize needs to serialize and deserialize the owner
 // Just consider this part boilerplate needed to make it all work
-passport.serializeUser((owner, cb) => {
-  cb(null, owner);
+passport.serializeUser((user, cb) => {
+    cb(null, user);
 });
 
 passport.deserializeUser((obj, cb) => {
-  cb(null, obj);
+    cb(null, obj);
 });
 
 // Exporting our configured passport

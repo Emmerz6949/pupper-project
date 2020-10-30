@@ -8,11 +8,11 @@ module.exports = function (app) {
     // Using the passport.authenticate middleware with our local strategy.
     // If the owner has valid login credentials, send them to the members page.
     // Otherwise the owner will be sent an error
-    app.post("/api/owner_login", passport.authenticate("local"), (req, res) => {
+    app.post("/api/owner_login", passport.authenticate("local-owner"), (req, res) => {
         // Sending back a password, even a hashed password, isn't a good idea
         res.json({
-            email: req.owner.email,
-            id: req.owner.id
+            email: req.user.email,
+            id: req.user.id
         });
     });
 
@@ -42,7 +42,7 @@ module.exports = function (app) {
     app.get("/api/owner_data", (req, res) => {
         if (!req.owner) {
             // The owner is not logged in, send back an empty object
-            res.json({});
+            res.json({ it: 'does not work' });
         } else {
             // Otherwise send back the owner's email and id
             // Sending back a password, even a hashed password, isn't a good idea
@@ -58,39 +58,39 @@ module.exports = function (app) {
         }
     });
 
-    app.put("/api/add_owner_profile", function(req, res) {
+    app.put("/api/add_owner_profile", function (req, res) {
         db.Owner.update(
-          req.body,
-          {
-            where: {
-              id: req.body.id
-            }
-          }).then(function(dbOwner) {
-          res.json(dbOwner);
-        });
+            req.body,
+            {
+                where: {
+                    id: req.body.id
+                }
+            }).then(function (dbOwner) {
+                res.json(dbOwner);
+            });
     });
 
-    app.put("/api/add_owner_schedule", function(req, res) {
+    app.put("/api/add_owner_schedule", function (req, res) {
         db.Owner.update(
-          req.body,
-          {
-            where: {
-              id: req.body.id
-            }
-          }).then(function(dbOwner) {
-          res.json(dbOwner);
-        });
+            req.body,
+            {
+                where: {
+                    id: req.body.id
+                }
+            }).then(function (dbOwner) {
+                res.json(dbOwner);
+            });
     });
 
-    app.get("/api/match", function(req, res) {
+    app.get("/api/match", function (req, res) {
         db.Owner.findAll({
-          where: {
-            zipCode: 78950
-          },
-          include: [db.Walker]
-        }).then(function(dbOwner) {
+            where: {
+                zipCode: 78950
+            },
+            include: [db.Walker]
+        }).then(function (dbOwner) {
             console.log(dbOwner);
-          res.json(dbOwner);
+            res.json(dbOwner);
         });
     });
 };
