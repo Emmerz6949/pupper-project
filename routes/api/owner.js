@@ -49,7 +49,7 @@ module.exports = function (app) {
             res.json({
                 dogName: req.owner.dogname,
                 lastName: req.owner.lastname,
-                zipCode: req.owner.zipcode,
+                zipcode: req.owner.zipcode,
                 dogSize: req.owner.dogsize,
                 dogBreed: req.owner.dogbreed,
                 email: req.owner.email,
@@ -78,6 +78,18 @@ module.exports = function (app) {
               id: req.body.id
             }
           }).then(function(dbOwner) {
+          res.json(dbOwner);
+        });
+    });
+
+    app.get("/api/match", function(req, res) {
+        db.Owner.findAll({
+          where: {
+            zipCode: 78950
+          },
+          include: [db.Walker]
+        }).then(function(dbOwner) {
+            console.log(dbOwner);
           res.json(dbOwner);
         });
     });
