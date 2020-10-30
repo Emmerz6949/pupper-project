@@ -31,22 +31,22 @@ require("./routes/api/walker");
 db.sequelize.sync().then(() => {
  
   db.Owner.create({
-    email: "suzi@example.com",
-    password: "suziQ789",
     dogName: "Rufus", 
     lastName: "Ruff", 
     dogBreed: "Dalmation", 
     dogSize: 50,
+    email: "suzi@example.com",
+    password: "suziQ789",
     zipcode: 78950
   });
 
   db.Walker.create({
-    email: "kyle@example.com",
-    password: "kyle666",
     firstName: "Kyle", 
     lastName: "Walkson", 
-    dogSize: 33,
-    zipcode: 78950
+    email: "kyle@example.com",
+    password: "kyle666",
+    zipcode: 78950,
+    dogSize: 33
   });
 
   app.listen(PORT, function() {

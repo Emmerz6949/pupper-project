@@ -9,14 +9,12 @@ const Walker = sequelize.define("Walker", {
 
     firstName: {
       type: DataTypes.STRING,
-      allowNull: true,
-      unique: false
+      allowNull: true
     },
 
     lastName: {
       type: DataTypes.STRING,
-      allowNull: true,
-      unique: false
+      allowNull: true
     },
 
     email: {
@@ -35,14 +33,12 @@ const Walker = sequelize.define("Walker", {
 
     zipcode: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      unique: false
+      allowNull: true
     },
-    
+
     dogSize: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      unique: false
+      allowNull: true
     }
 
   });
