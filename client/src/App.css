@@ -11,6 +11,17 @@ img {
   height: 150px;
   width: 125px;
 }
+
+.splash-dog{
+width: 230px;
+
+}
+.Splash-image {
+  height: 145px;
+  
+  padding-top: 50px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
