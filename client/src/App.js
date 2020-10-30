@@ -1,15 +1,18 @@
 import React from 'react';
 
 import './App.css';
-import Login from '../src/pages/login'; 
+import CreateWalkerProfile from './pages/CreateWalkerProfile';
+import WalkerProfile from './pages/WalkerProfile.js';
+import DogProfile from './pages/DogProfile.js';
+import Splash from './pages/Splash';
 
 
 function App() {
   return (
     <div className="App">
      
-        <Login />
-        
+        <Splash/>
+
         
      
     </div>
