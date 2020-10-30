@@ -20,7 +20,10 @@ function WalkerProfile() {
       <div>
         <ButtonAppBar />
         <WalkerProfileInfo/>
+
+        <Link to='/createwalker'>
         <EditButton/>
+        </Link>
         
         <Link to='/walkerschedule'>
         <WalkButton/>

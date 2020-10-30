@@ -19,7 +19,13 @@ function DogProfile() {
       <div>
         <ButtonAppBar />
         <DogProfileInfo/>
+        
+        <Link to='/createdog'>
         <EditButton/>
+        </Link>
+        
+
+
         <Link to='/dogschedule'>
         <WalkButton/>
         </Link>
