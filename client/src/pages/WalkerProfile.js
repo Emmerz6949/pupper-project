@@ -14,6 +14,8 @@ import EditButton from '../components/editButton.js';
 import { Link } from 'react-router-dom'; 
 
 function WalkerProfile() {
+  const [profileObj, ]
+
   return (
 
     
