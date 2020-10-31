@@ -21,7 +21,16 @@ export default function LoginTextFields() {
     const classes = useStyles(); 
     return ( 
         <form className={classes.root} noValidate autoComplete='off'>
-            <div className = {classes.formSpacing}> 
+            <div className = {classes.formSpacing}
+            style={{
+                paddingBottom: '30px',
+                paddingTop: '10px',
+                
+              }}>
+            
+            
+            
+            
                 <EmailIcon 
                     color='primary'/>
                 <TextField 

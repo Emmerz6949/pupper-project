@@ -14,7 +14,15 @@ export default function SwitchLabels() {
     };
 
     return (
-        <div>
+        <div
+        style={{
+            paddingBottom: '40px',
+            paddingTop: '10px',
+            
+          }}>
+        
+        
+        
             <FormGroup row>
 
             <FormControlLabel

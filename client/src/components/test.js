@@ -18,16 +18,17 @@ export default function TextFieldSizesDog() {
 
   return (
     <form className={classes.root} noValidate autoComplete="off">
-      <Grid container alignItems="center">
-      <div>
-      <h1> Create Dog Profile</h1>
-        <TextField label="Dog Name" id="standard-size-small" defaultValue="" size="small" />
-        <TextField label="Dog Last Name" id="standard-size-small" defaultValue="" size="small" />
-        <TextField label="Dog Breed" id="standard-size-small" defaultValue="" size="small" />
-        <TextField label="Email" id="standard-size-small" defaultValue="" size="small" />
-        <TextField label="ZipcCode" id="standard-size-small" defaultValue="" size="small" />
+      
+      <div style={{ paddingBottom: '0px', paddingTop: '60px', }}>
+      <center>
+        <div><TextField label="Dog Name" id="standard-size-small" defaultValue="" size="small" /></div>
+        <div><TextField label="Dog Last Name" id="standard-size-small" defaultValue="" size="small" /></div>
+        <div><TextField label="Dog Breed" id="standard-size-small" defaultValue="" size="small" /></div>
+        <div><TextField label="Email" id="standard-size-small" defaultValue="" size="small" /></div>
+        <div><TextField label="ZipcCode" id="standard-size-small" defaultValue="" size="small" /></div>
+        </center>
       </div>
-      </Grid>
+      
     
     </form>
   );

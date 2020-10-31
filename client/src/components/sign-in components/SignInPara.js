@@ -14,7 +14,13 @@ export default function Para(){
     const classes = useStyles(); 
 
     return ( 
-        <div className={classes.root}>
+        <div className={classes.root}
+            style={{
+            paddingBottom: '0px',
+            paddingTop: '80px',
+            
+          }}>
+        
             <Typography variant = 'body1' gutterBottom> 
             Welcome to Pupper, an app designed for matching good doggies with dog walkers
             in the area when you don't have the time. Create an account and get started with 

@@ -10,7 +10,7 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 const useStyles = makeStyles((theme) => ({
   button: {
-    margin: theme.spacing(1),
+    margin: theme.spacing(2),
   },
 }));
 
@@ -23,7 +23,7 @@ export default function IconLabelButtons() {
         variant="contained"
         color="primary"
         className={classes.button}
-        endIcon={<ArrowForwardIcon />}
+        /*/</div>endIcon={<ArrowForwardIcon />}*/
       >
         Save profile
       </Button>

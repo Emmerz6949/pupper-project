@@ -15,14 +15,12 @@ import AlertDialogWalker from "../components/walkerScheduleSet.js";
 import IconLabelButtonsProfile from '../components/button.js';
 import AlertDialogNoResults from '../components/noResults.js';
 import WalkerProfileInfo from '../components/WalkerProfileInfo';
-
+import CreateProfileBar from '../components/CreateProfileBar.js';
 function CreateWalkerProfile() {
   return (
   
-    <Grid container direction="column" justify="center" alignItems="center" >
       <div className="App">
-      <h1> Create Walker Profile</h1>
-        <ButtonAppBar /> 
+        <CreateProfileBar /> 
         <TextFieldSizesWalker />
         <DiscreteSliderWalker/>
         <Link to='walkerschedule'>
@@ -32,7 +30,6 @@ function CreateWalkerProfile() {
         
 
       </div>
-    </Grid>
 
   
   );

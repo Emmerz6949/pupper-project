@@ -15,31 +15,40 @@ const useStyles = makeStyles((theme) => ({
 export default function SignInButton() {
     const classes = useStyles(); 
     return (
-        <div>
+       <center>
+        <div style={{ paddingBottom: '0px', paddingTop: '30px', }}>
+           
+           <div >
             <Link to='/createwalker'>
             <Button 
                 className={classes.root} 
                 variant = 'contained'
                 color = 'primary'
-                fullWidth
+                
                 type = 'submit'>
     
                 Create Dog Walker Account
             </Button>
             </Link>
+           </div>
          
+            <div>
             <Link to='/createdog'>
             <Button 
                 className={classes.root} 
                 variant = 'contained'
                 color = 'primary'
-                fullWidth
+                
                 type = 'submit'>
     
                 Create Dog Owner Account
             </Button>
             </Link>
+            </div>
         </div>
+        </center>
+        
+       
 
     ); 
 }

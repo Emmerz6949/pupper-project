@@ -14,7 +14,13 @@ const useStyles = makeStyles((theme) => ({
 export default function LoginButton() {
     const classes = useStyles(); 
     return (
-        <div>
+        
+        <div
+        style={{
+            paddingBottom: '0px',
+            paddingTop: '30px',
+          }}>
+              <center>
             <Button 
                 className={classes.root} 
                 variant = 'contained'
@@ -24,6 +30,7 @@ export default function LoginButton() {
     
                 Login
             </Button>
+            </center>
         </div>
 
     ); 

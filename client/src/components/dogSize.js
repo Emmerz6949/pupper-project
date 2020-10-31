@@ -7,7 +7,7 @@ import Grid from '@material-ui/core/Grid';
 const useStyles = makeStyles((theme) => ({
   root: {
     width: 250,
-   paddingLeft: 0,
+   
    paddingTop: 12,
    paddingBottom: 30,
    
@@ -43,14 +43,13 @@ export default function DiscreteSlider() {
   const classes = useStyles();
 
   return (
-    <Grid container direction="row" justify="center" alignItems="center">
         <div className={classes.root} >
             <Typography id="discrete-slider-custom" gutterBottom>
-               <p>How big is your dog </p> 
+               <center><p>How big is your dog </p> </center>
             </Typography>
             <Slider defaultValue={0} step={50} marks={marks}/>
         </div>
-    </Grid>
+   
   );
 }
 

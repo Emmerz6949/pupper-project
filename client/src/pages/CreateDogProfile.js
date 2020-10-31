@@ -8,26 +8,30 @@ import ButtonAppBar from "../components/appBar.js";
 import DiscreteSlider from "../components/dogSize.js";
 import Grid from '@material-ui/core/Grid';
 import { Link } from 'react-router-dom'; 
+import CreateProfileBar from '../components/CreateProfileBar.js';
+
+
 
 
 function CreateDogProfile() {
+  
   return (
 
-    <Grid container direction="column" justify="center" alignItems="center" >
       <div>
-        <ButtonAppBar />
+
+        <CreateProfileBar />
         <TextFieldSizes />
         <DiscreteSlider />
-
+        <center>
         <Link to='/dogschedule'>
         <IconLabelButtonsProfile/>
         </Link>
+        </center>
         
         
-        
-          
+       
       </div>
-    </Grid>
+      
   );
 }
 
