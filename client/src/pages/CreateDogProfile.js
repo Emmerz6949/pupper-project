@@ -57,9 +57,9 @@ function CreateDogProfile() {
       <div>
         <CreateProfileBar />
         <TextFieldSizes handleDogChange = {handleDogChange} />
-        <DiscreteSlider />
         <center>
-        <Link to='/dogschedule'>
+        <DiscreteSlider />
+        <Link to='/dogprofile'>
         <IconLabelButtonsProfile handleDogSubmit ={handleDogSubmit} />
         </Link>
         </center>

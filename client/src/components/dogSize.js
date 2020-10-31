@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 const marks = [
   {
     value: 0,
@@ -45,7 +46,7 @@ export default function DiscreteSlider() {
   return (
         <div className={classes.root} >
             <Typography id="discrete-slider-custom" gutterBottom>
-               <center><p>How big is your dog </p> </center>
+               How big is your dog 
             </Typography>
             <Slider defaultValue={0} step={50} marks={marks}/>
         </div>

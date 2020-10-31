@@ -24,7 +24,7 @@ function Splash() {
       }}
       >
 
-<center><img class="Splash-image" src={Pupper_logo_splash_01} alt="A"/></center>
+<center><img className="Splash-image" src={Pupper_logo_splash_01} alt="A"/></center>
 
 <Link to= '/doglogin'>
 <center>< SplashDogButton/></center>
