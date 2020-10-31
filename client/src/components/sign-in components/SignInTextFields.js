@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) =>({
     }
 })); 
 
-export default function LoginTextFields() { 
+export default function LoginTextFields(props) { 
     const classes = useStyles(); 
     return ( 
         <form className={classes.root} noValidate autoComplete='off'>
@@ -35,8 +35,10 @@ export default function LoginTextFields() {
                     color='primary'/>
                 <TextField 
                     label='' 
+                    name='email'
                     id='standard-size-small' 
                     defaultValue='johndoe@mail.com' 
+                    onChange={props.handleLoginChange}
                     size='small'/>
             </div>
 
@@ -45,8 +47,10 @@ export default function LoginTextFields() {
                     color='primary'/>
                 <TextField 
                     label='' 
+                    name='password'
                     id= 'standard-size-small' 
                     defaultValue='password' 
+                    onChange={props.handleLoginChange}
                     size='small' />
             </div>
         </form>

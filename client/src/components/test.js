@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TextFieldSizesDog() {
+export default function TextFieldSizesDog(props) {
   const classes = useStyles();
 
   return (
@@ -21,15 +21,14 @@ export default function TextFieldSizesDog() {
       
       <div style={{ paddingBottom: '0px', paddingTop: '60px', }}>
       <center>
-        <div><TextField label="Dog Name" id="standard-size-small" defaultValue="" size="small" /></div>
-        <div><TextField label="Dog Last Name" id="standard-size-small" defaultValue="" size="small" /></div>
-        <div><TextField label="Dog Breed" id="standard-size-small" defaultValue="" size="small" /></div>
-        <div><TextField label="Email" id="standard-size-small" defaultValue="" size="small" /></div>
-        <div><TextField label="ZipcCode" id="standard-size-small" defaultValue="" size="small" /></div>
+        <div><TextField label="Dog Name" name='dogName' id="standard-size-small" onChange = {props.handleDogChange} defaultValue="" size="small"/></div>
+        <div><TextField label="Dog Last Name" name='lastName' id="standard-size-small" onChange = {props.handleDogChange} defaultValue="" size="small" /></div>
+        <div><TextField label="Dog Breed" name='dogSize' id="standard-size-small" onChange = {props.handleDogChange} defaultValue="" size="small" /></div>
+        <div><TextField label="Email" name='email' id="standard-size-small" onChange = {props.handleDogChange} defaultValue="" size="small" /></div>
+        <div><TextField label="ZipCode" name='zipCode' id="standard-size-small" onChange = {props.handleDogChange} defaultValue="" size="small" /></div>
         </center>
+     
       </div>
-      
-    
     </form>
   );
 }
