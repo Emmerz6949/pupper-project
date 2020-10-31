@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react'; 
 import Container from '@material-ui/core/Container'; 
 import ScheduleBar from '../components/schedule components/ScheduleBar';  
 import { makeStyles } from '@material-ui/core/styles'; 
@@ -15,6 +16,26 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center'
   }
 }));
+
+function CreateWalkerSchedule() { 
+
+  const [scheduleObj, setScheduleObj] = useState({ date: '', time: '' }); 
+
+  const handleScheduleChange = event => { 
+    const { date, time } = event.target; 
+    setScheduleObj({ ...scheduleObj, [date]: time })
+  }
+
+  const handleScheduleSubmit = event => {
+    API.walker_schedule({
+        date: scheduleObj.date, 
+        time: scheduleObj.time
+    })
+      .then(res => console.log(res))
+      .catch(err => console.log(err)); 
+  }
+}
+
 
 function Schedule() {
   const classes = useStyles(); 

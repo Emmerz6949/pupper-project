@@ -20,7 +20,8 @@ export default function LoginButton() {
                 variant = 'contained'
                 color = 'primary'
                 fullWidth
-                type = 'submit'>
+                type = 'submit'
+                onClick={handleLoginSubmit}>
     
                 Login
             </Button>

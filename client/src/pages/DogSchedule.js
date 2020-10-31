@@ -8,6 +8,8 @@ import '../App.css';
 import WalkButton from '../components/schedule components/WalkButton';
 import SchedulePicker from '../components/schedule components/DateTimePicker';
 import SwitchLabels from '../components/schedule components/TimeOfDay';
+import { useState } from 'react'; 
+import API from '../utils/API'; 
 
 const useStyles = makeStyles((theme) => ({
   page: { 
@@ -16,7 +18,26 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center'
   }
 })
-)
+); 
+
+function CreateDogSchedule() { 
+
+  const [scheduleObj, setScheduleObj] = useState({ date: '', time: '' }); 
+
+  const handleScheduleChange = event => { 
+    const { date, time } = event.target; 
+    setScheduleObj({ ...scheduleObj, [date]: time })
+  }
+
+  const handleScheduleSubmit = event => {
+    API.owner_schedule({
+        date: scheduleObj.date, 
+        time: scheduleObj.time
+    })
+      .then(res => console.log(res))
+      .catch(err => console.log(err)); 
+  }
+}
 
 function Schedule() {
   const classes = useStyles(); 

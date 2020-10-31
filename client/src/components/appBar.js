@@ -10,6 +10,7 @@ import MeetingRoomIcon from '@material-ui/icons/MeetingRoom';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import DeleteIcon from '@material-ui/icons/Delete';
 import pupper_logo_02 from '../pupper_logo_02.svg';
+import { Link } from 'react-router-dom'; 
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,9 +37,12 @@ export default function ButtonAppBar() { console.log (pupper_logo_02)
                  
             </Typography>
 
-            <IconButton aria-label="MeetingRoomIcon"  color="inherit" className={classes.margin}>
+            <Link to='/'>
+            <IconButton aria-label="MeetingRoomIcon"  color="white" className={classes.margin}>
             <MeetingRoomIcon />
             </IconButton>
+            </Link>
+            
         </Toolbar>
       </AppBar>
    
