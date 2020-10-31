@@ -39,7 +39,7 @@ function CreateDogProfile() {
     event.preventDefault(); 
 
     if (dogObj.dogName && dogObj.zipCode && dogObj.email) { 
-      API.owner_schedule({
+      API.owner_profile({
         dogName: dogObj.dogName, 
         lastName: dogObj.lastName,
         zipCode: dogObj.zipCode,
