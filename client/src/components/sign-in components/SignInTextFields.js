@@ -3,8 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import EmailIcon from '@material-ui/icons/Email'; 
 import LockIcon from '@material-ui/icons/Lock'; 
 import TextField from '@material-ui/core/TextField'; 
-import { useState } from 'react'; 
-import API from '../utils/API';
 
 const useStyles = makeStyles((theme) =>({
     root: { 
@@ -19,7 +17,7 @@ const useStyles = makeStyles((theme) =>({
     }
 })); 
 
-export default function LoginTextFields() { 
+export default function LoginTextFields(props) { 
     const classes = useStyles(); 
     return ( 
         <form className={classes.root} noValidate autoComplete='off'>
@@ -31,7 +29,7 @@ export default function LoginTextFields() {
                     name='email'
                     id='standard-size-small' 
                     defaultValue='johndoe@mail.com' 
-                    onChange={handleLoginChange}
+                    onChange={props.handleLoginChange}
                     size='small'/>
             </div>
 
@@ -43,7 +41,7 @@ export default function LoginTextFields() {
                     name='password'
                     id= 'standard-size-small' 
                     defaultValue='password' 
-                    onChange={handleLoginChange}
+                    onChange={props.handleLoginChange}
                     size='small' />
             </div>
         </form>

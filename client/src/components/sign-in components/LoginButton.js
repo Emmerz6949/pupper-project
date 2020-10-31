@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
 
   
 
-export default function LoginButton() {
+export default function LoginButton(props) {
     const classes = useStyles(); 
     return (
         <div>
@@ -21,7 +21,7 @@ export default function LoginButton() {
                 color = 'primary'
                 fullWidth
                 type = 'submit'
-                onClick={handleLoginSubmit}>
+                onClick={props.handleLoginSubmit}>
     
                 Login
             </Button>

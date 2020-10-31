@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     }
 })); 
 
-function WalkerLogin() { 
+function Walker() { 
     //set component initial state
     const [loginObject, setLoginObject] = useState({email: '', password: ''}); 
 

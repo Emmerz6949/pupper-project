@@ -8,6 +8,7 @@ import '../App.css';
 import ScheduleButton from '../components/schedule components/ScheduleButton';
 import SchedulePicker from '../components/schedule components/DateTimePicker';
 import SwitchLabels from '../components/schedule components/TimeOfDay';
+import API from '../utils/API'; 
 
 const useStyles = makeStyles((theme) => ({
   page: { 
