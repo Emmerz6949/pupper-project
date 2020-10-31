@@ -18,13 +18,13 @@ export default {
         return axios.get("/logout", logoutInfo);
     },
     owner_profile: function (profileInfo) {
-        return axios.put("/api/owner_profile", profileInfo);
+        return axios.put("/api/add_owner_profile", profileInfo);
     },
     owner_data: function (dataInfo) {
         return axios.get("/api/owner_data", dataInfo);
     },
     owner_schedule: function (scheduleInfo) {
-        return axios.put("/api/owner_schedule", scheduleInfo);
+        return axios.put("/api/add_owner_schedule", scheduleInfo);
     },
 
     match: function (matchInfo) {
@@ -40,12 +40,12 @@ export default {
         return axios.post("/api/walker_signup", signupInfo);
     },
     walker_profile: function (profileInfo) {
-        return axios.put("/api/walker_profile", profileInfo);
+        return axios.put("/api/add_walker_profile", profileInfo);
     },
     walker_data: function (dataInfo) {
         return axios.get("/api/walker_data", dataInfo);
     },
     walker_schedule: function (scheduleInfo) {
-        return axios.put("/api/walker_schedule", scheduleInfo);
+        return axios.put("/api/add_walker_schedule", scheduleInfo);
     }
 }

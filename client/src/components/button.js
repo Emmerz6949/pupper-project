@@ -18,7 +18,7 @@ export default function IconLabelButtons(props) {
         variant="contained"
         color="primary"
         className={classes.button}
-        onChange = {props.handleDogChange}
+        onChange = {props.handleInputSubmit}
         endIcon={<ArrowForwardIcon />}
       >
         Save profile

@@ -35,11 +35,11 @@ function CreateDogProfile() {
   }
 
   //upon submit
-  const handleDogSubmit = (event) => { 
+  const handleInputSubmit = (event) => { 
     event.preventDefault(); 
 
     if (dogObj.dogName && dogObj.zipCode && dogObj.email) { 
-      API.owner_schedule({
+      API.owner_profile({
         dogName: dogObj.dogName, 
         lastName: dogObj.lastName,
         zipCode: dogObj.zipCode,
@@ -58,9 +58,9 @@ function CreateDogProfile() {
         <CreateProfileBar />
         <TextFieldSizes handleDogChange = {handleDogChange} />
         <center>
-        <DiscreteSlider />
+        <DiscreteSlider handleDogChange = {handleDogChange}/>
         <Link to='/dogprofile'>
-        <IconLabelButtonsProfile handleDogSubmit ={handleDogSubmit} />
+        <IconLabelButtonsProfile handleInputSubmit ={handleInputSubmit} />
         </Link>
         </center>
       </div>

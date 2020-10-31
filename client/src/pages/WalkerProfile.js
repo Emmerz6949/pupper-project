@@ -13,8 +13,10 @@ import WalkButton from '../components/schedule components/WalkButton';
 import EditButton from '../components/editButton.js';
 import { Link } from 'react-router-dom'; 
 import DogProfileBar from '../components/DogProfileBar.js';
+
+
 function WalkerProfile() {
-  //const [profileObj, ]
+
 
   return (
 
