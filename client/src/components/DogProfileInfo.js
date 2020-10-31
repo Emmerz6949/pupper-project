@@ -27,8 +27,16 @@ export default function DogProfileInfo() {
   const classes = useStyles();
 
   return (
-    <List className={classes.root}>
-        <h1>Dog Profile</h1>
+    
+    <div style={{ display:'flex', justifyContent:'center' }}>
+    <List className={classes.root}
+    
+    style={{
+        paddingBottom: '20px',
+        paddingTop: '65px',
+        
+      }}>
+        
       <ListItem>
         <ListItemText primary="CoCo" secondary="Dog Name" />
       </ListItem>
@@ -115,7 +123,8 @@ export default function DogProfileInfo() {
 
 
 
-
     </List>
+   
+    </div>
   );
 }

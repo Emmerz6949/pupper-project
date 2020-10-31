@@ -27,16 +27,16 @@ function Splash() {
 <center><img class="Splash-image" src={Pupper_logo_splash_01} alt="A"/></center>
 
 <Link to= '/doglogin'>
-< SplashDogButton/>
+<center>< SplashDogButton/></center>
 </Link>
 
 <Link to='/walkerlogin'>
-< SplashWalkerButton/>
+<center>< SplashWalkerButton/></center>
 </Link>
 
 
 <Link to='/signup'>
-< SplashCreateButton/>
+<center>< SplashCreateButton/></center>
 </Link>
 
 </div>

@@ -22,7 +22,7 @@ export default function SplashDogButton() {
     
     style={{
         paddingBottom: '0px',
-        paddingTop: '60px',
+        paddingTop: '45px',
        
        
       }}

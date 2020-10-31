@@ -9,7 +9,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import MeetingRoomIcon from '@material-ui/icons/MeetingRoom';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import DeleteIcon from '@material-ui/icons/Delete';
-import pupper_logo_02 from '../../pupper_logo_02.svg';
+import pupper_logo_02 from '../pupper_logo_02.svg';
 import { Link } from 'react-router-dom'; 
 
 const useStyles = makeStyles((theme) => ({
@@ -25,16 +25,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignInBar() { console.log (pupper_logo_02)
+export default function CreateProfileBar() { console.log (pupper_logo_02)
   const classes = useStyles();
 
   return (
     
-      <AppBar position="fixed"  >
+      <AppBar position="fixed">
         <Toolbar>
             <img src={pupper_logo_02} alt="A"/>
             <Typography variant="p" className={classes.title}>
-            <center> <strong>Sign up</strong></center>
+                <center> <strong>Create Profile </strong></center>
             </Typography>
 
             <Link to='/'>

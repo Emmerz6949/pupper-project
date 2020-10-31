@@ -20,7 +20,9 @@ const useStyles = makeStyles((theme) => ({
 })
 ); 
 
-function CreateDogSchedule() { 
+
+function Schedule() {
+  const classes = useStyles(); 
 
   const [scheduleObj, setScheduleObj] = useState({ date: '', time: '' }); 
 
@@ -37,10 +39,6 @@ function CreateDogSchedule() {
       .then(res => console.log(res))
       .catch(err => console.log(err)); 
   }
-}
-
-function Schedule() {
-  const classes = useStyles(); 
 
   return (
    
@@ -50,9 +48,9 @@ function Schedule() {
   
         <ScheduleBar />
         <SchedulePicker />
-        <LocationTextField />
+        <LocationTextField handleScheduleChange = {handleScheduleChange}/>
         <SwitchLabels />
-        <WalkButton />
+        <WalkButton handleScheduleSubmit = {handleScheduleSubmit} />
         
       </div>
     

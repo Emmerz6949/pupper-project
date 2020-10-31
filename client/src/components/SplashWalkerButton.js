@@ -21,7 +21,7 @@ export default function SplashWalkerButton() {
     <div
     
     style={{
-        paddingBottom: '40px',
+        paddingBottom: '25px',
         paddingTop: '0px',
        
       }}

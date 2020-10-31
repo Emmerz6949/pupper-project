@@ -21,7 +21,7 @@ export default function SplashCreateButton() {
     
     style={{
         paddingBottom: '10px',
-        paddingTop: '60px',
+        paddingTop: '1px',
        
       }}
       >
