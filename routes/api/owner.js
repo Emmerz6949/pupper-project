@@ -25,7 +25,7 @@ module.exports = function (app) {
             password: req.body.password
         })
             .then(() => {
-                res.redirect(307, "/api/login");
+                res.redirect(307, "/api/owner_login");
             })
             .catch(err => {
                 res.status(401).json(err);
@@ -83,14 +83,18 @@ module.exports = function (app) {
     });
 
     app.get("/api/match", function (req, res) {
-        db.Owner.findAll({
+        db.Walker.findAll({
             where: {
-                zipCode: 78950
+                zipcode: req.owner.zipcode,
+                dogSize: req.owner.dogsize || 'Any Size'
             },
-            include: [db.Walker]
-        }).then(function (dbOwner) {
-            console.log(dbOwner);
-            res.json(dbOwner);
+            include: [db.Owner]
+        }).then(function (dbWalker) {
+            const resultsJSON = dbWalker.map(result => {
+                return result.toJSON();
+            });
+            console.log("ping");
+            res.json(resultsJSON);
         });
     });
 };

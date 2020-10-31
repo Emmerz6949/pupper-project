@@ -21,7 +21,7 @@ export default function EditButton() {
   return (
     <div>
       <Button 
-        variant="contained"
+        variant="text"
         color="primary"
         className={classes.button}
         /*startIcon={<ArrowBackIcon />}*/

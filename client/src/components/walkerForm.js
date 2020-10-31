@@ -18,15 +18,14 @@ export default function TextFieldSizesWalker() {
 
   return (
     <form className={classes.root} noValidate autoComplete="off">
-      <Grid container alignItems="center" >
-      <div>
+      <div style={{ paddingBottom: '0px', paddingTop: '60px',}}>
       
-        <TextField label="First Name" id="standard-size-small" defaultValue="" size="small" />
-        <TextField label="Last Name" id="standard-size-small" defaultValue="" size="small" />
-        <TextField label="Email" id="standard-size-small" defaultValue="" size="small" />
-        <TextField label="ZipCode" id="standard-size-small" defaultValue="" size="small" />
+        <div><TextField label="First Name" id="standard-size-small" defaultValue="" size="small" /></div>
+        <div><TextField label="Last Name" id="standard-size-small" defaultValue="" size="small" /></div>
+        <div><TextField label="Email" id="standard-size-small" defaultValue="" size="small" /></div>
+        <div><TextField label="ZipCode" id="standard-size-small" defaultValue="" size="small" /></div>
       </div>
-      </Grid>
+      
     
     </form>
   );

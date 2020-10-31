@@ -11,19 +11,27 @@ const useStyles = makeStyles((theme) => ({
 
   
 
-export default function LoginButton() {
+export default function LoginButton(props) {
     const classes = useStyles(); 
     return (
-        <div>
+        
+        <div
+        style={{
+            paddingBottom: '0px',
+            paddingTop: '30px',
+          }}>
+              <center>
             <Button 
                 className={classes.root} 
                 variant = 'contained'
                 color = 'primary'
                 fullWidth
-                type = 'submit'>
+                type = 'submit'
+                onClick={props.handleLoginSubmit}>
     
                 Login
             </Button>
+            </center>
         </div>
 
     ); 

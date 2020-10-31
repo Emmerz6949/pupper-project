@@ -48,4 +48,4 @@ export default {
     walker_schedule: function (scheduleInfo) {
         return axios.put("/api/walker_schedule", scheduleInfo);
     }
-};
+}

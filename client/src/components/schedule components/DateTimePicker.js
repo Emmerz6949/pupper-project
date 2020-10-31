@@ -20,7 +20,15 @@ export default function SchedulePicker() {
         
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
         
-        <div className = {classes.formSpacing}>
+        <div className = {classes.formSpacing}
+        
+            style={{
+            paddingBottom: '0px',
+            paddingTop: '50px',
+           
+          }}
+          >
+
         <p>Date</p>
             <KeyboardDatePicker
             autoOk
@@ -31,6 +39,7 @@ export default function SchedulePicker() {
             value={selectedDate}
             InputAdornmentProps={{ position: "start" }}
             onChange={date => handleDateChange(date)}
+            size='small'
             />
         </div>
     </MuiPickersUtilsProvider>

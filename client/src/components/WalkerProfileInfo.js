@@ -8,11 +8,14 @@ import Avatar from '@material-ui/core/Avatar';
 import BeachAccessIcon from '@material-ui/icons/BeachAccess';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
+import { Container } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
     maxWidth: 360,
+    
+    
     backgroundColor: theme.palette.background.paper,
   },
   dividerFullWidth: {
@@ -27,8 +30,10 @@ export default function WalkerProfileInfo() {
   const classes = useStyles();
 
   return (
-    <List className={classes.root}>
-        <h1>Walker Profile</h1>
+       <div style={{ display:'flex', justifyContent:'center' }}>
+
+    <List className={classes.root} style={{  paddingBottom: '20px',paddingTop: '65px',  }}>
+        
       <ListItem>
         <ListItemText primary="Frank" secondary="First Name" />
       </ListItem>
@@ -42,6 +47,7 @@ export default function WalkerProfileInfo() {
         >
         </Typography>
       </li>
+      
 
       <ListItem>
         <ListItemText primary="Walker" secondary="Last Name" />
@@ -101,5 +107,6 @@ export default function WalkerProfileInfo() {
 
 
     </List>
+   </div>
   );
 }

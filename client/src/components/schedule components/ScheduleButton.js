@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
 
   
 
-export default function WalkButton() {
+export default function WalkButton(props) {
     const classes = useStyles(); 
     return (
         <div>
@@ -19,6 +19,7 @@ export default function WalkButton() {
                 className={classes.root} 
                 variant = 'contained'
                 color = 'primary'
+                onSubmit = {props.handleScheduleSubmit}
                 fullWidth
                 type = 'submit'>
     
