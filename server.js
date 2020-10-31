@@ -35,7 +35,7 @@ db.sequelize.sync().then(() => {
         dogName: "Rufus",
         lastName: "Ruff",
         dogBreed: "Dalmation",
-        dogSize: 50,
+        dogSize: "Medium",
         email: "suzi@example.com",
         password: "suziQ789",
         zipcode: 78950
@@ -47,7 +47,7 @@ db.sequelize.sync().then(() => {
         email: "kyle@example.com",
         password: "kyle666",
         zipcode: 78950,
-        dogSize: 33
+        dogSize: "Medium"
     });
 
     app.listen(PORT, function () {
