@@ -14,7 +14,7 @@ import EditButton from '../components/editButton.js';
 import { Link } from 'react-router-dom'; 
 import DogProfileBar from '../components/DogProfileBar.js';
 function WalkerProfile() {
-  const [profileObj, ]
+  //const [profileObj, ]
 
   return (
 

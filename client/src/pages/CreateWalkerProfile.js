@@ -23,7 +23,7 @@ function CreateWalkerProfile() {
         <CreateProfileBar /> 
         <TextFieldSizesWalker />
         <DiscreteSliderWalker/>
-        <Link to='walkerschedule'>
+        <Link to='/walkerprofile'>
         <IconLabelButtonsProfile/> 
         </Link>
         

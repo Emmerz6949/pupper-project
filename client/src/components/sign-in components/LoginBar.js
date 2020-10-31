@@ -33,8 +33,8 @@ export default function LoginBar() { console.log (pupper_logo_02)
       <AppBar position="fixed"  >
         <Toolbar>
             <img src={pupper_logo_02} alt="A"/>
-            <Typography variant="p" className={classes.title}>
-            <center> <strong>Login</strong></center>
+            <Typography variant="body1" className={classes.title}>
+            Login
             </Typography>
 
             <Link to='/'>
