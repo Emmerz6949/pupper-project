@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TextFieldSizesDog() {
+export default function TextFieldSizesDog(props) {
   const classes = useStyles();
 
   return (
@@ -21,11 +21,11 @@ export default function TextFieldSizesDog() {
       <Grid container alignItems="center">
       <div>
       <h1> Create Dog Profile</h1>
-        <TextField label="Dog Name" id="standard-size-small" defaultValue="" size="small" />
-        <TextField label="Dog Last Name" id="standard-size-small" defaultValue="" size="small" />
-        <TextField label="Dog Breed" id="standard-size-small" defaultValue="" size="small" />
-        <TextField label="Email" id="standard-size-small" defaultValue="" size="small" />
-        <TextField label="ZipcCode" id="standard-size-small" defaultValue="" size="small" />
+        <TextField label="Dog Name" name='dogName' id="standard-size-small" onChange = {props.handleDogChange} defaultValue="" size="small" />
+        <TextField label="Dog Last Name" name='lastName' id="standard-size-small" onChange = {props.handleDogChange} defaultValue="" size="small" />
+        <TextField label="Dog Breed" name='dogSize' id="standard-size-small" onChange = {props.handleDogChange} defaultValue="" size="small" />
+        <TextField label="Email" name='email' id="standard-size-small" onChange = {props.handleDogChange} defaultValue="" size="small" />
+        <TextField label="ZipCode" name='zipCode' id="standard-size-small" onChange = {props.handleDogChange} defaultValue="" size="small" />
       </div>
       </Grid>
     

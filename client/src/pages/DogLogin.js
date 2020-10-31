@@ -8,6 +8,8 @@ import SignInFooter from '../components/sign-in components/SignInFooter';
 import LoginTextFields from '../components/sign-in components/SignInTextFields';
 import '../App.css'; 
 import { Link } from 'react-router-dom'; 
+import { useState } from 'react';
+import API from '../utils/API';
 
 const useStyles = makeStyles((theme) => ({ 
     page:  { 
@@ -20,16 +22,39 @@ const useStyles = makeStyles((theme) => ({
 function SignIn() { 
     const classes = useStyles(); 
 
+    //set component initial state
+    const [loginObject, setLoginObject] = useState({email: '', password: ''}); 
+
+    //handles updating component state when the user types into the input field
+    const handleLoginChange = (event) => { 
+        const { email, password } = event.target; 
+        setLoginObject({ ...loginObject, [email]: password })
+    }; 
+
+    //use the loginwalker to login user 
+    const handleLoginSubmit = (event) => { 
+        event.preventDefault();  
+
+        if (loginObject.email && loginObject.password) { 
+            API.loginOwner({
+                email: loginObject.email, 
+                password: loginObject.password
+            })
+            .then(res => console.log(res))
+            .catch(err => console.log(err)); 
+        }
+    }
+
     return(
         <Container maxWidth> 
         
             <div className = {classes.page}>
                 <LoginBar />
                 <SignInPara />
-                <LoginTextFields />
+                <LoginTextFields handleLoginChange = {handleLoginChange} />
 
                 <Link to='/dogprofile'>
-                <LoginButton />
+                <LoginButton handleLoginSubmit = {handleLoginSubmit}/>
                 </Link>
                 
 

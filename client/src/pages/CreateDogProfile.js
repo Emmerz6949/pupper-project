@@ -8,19 +8,59 @@ import ButtonAppBar from "../components/appBar.js";
 import DiscreteSlider from "../components/dogSize.js";
 import Grid from '@material-ui/core/Grid';
 import { Link } from 'react-router-dom'; 
-
+import API from '../utils/API';
+import { useState } from 'react'; 
 
 function CreateDogProfile() {
+  const [dogObj, setDogObj] = useState({
+    dogName: '', 
+    lastName: '', 
+    zipCode: '', 
+    dogSize: '', 
+    email: '', 
+    id: ''
+  }); 
+
+  //updates dog's information with owner and dog info
+  const handleDogChange = (event) => { 
+    const { dogName, lastName, zipCode, dogSize, email, id} = event.target; 
+    setDogObj({ ...dogObj, 
+      [dogName]: dogName, 
+      [lastName]: lastName,
+      [zipCode]: zipCode, 
+      [dogSize]: dogSize, 
+      [email]: email, 
+      [id]: id }); 
+  }
+
+  //upon submit
+  const handleDogSubmit = (event) => { 
+    event.preventDefault(); 
+
+    if (dogObj.dogName && dogObj.zipCode && dogObj.email) { 
+      API.owner_schedule({
+        dogName: dogObj.dogName, 
+        lastName: dogObj.lastName,
+        zipCode: dogObj.zipCode,
+        dogSize: dogObj.dogSize,
+        email: dogObj.email,
+        id: dogObj.id
+      })
+      .then(res => console.log(res))
+      .catch(err => console.log(err)); 
+    }
+  }
+
   return (
 
     <Grid container direction="column" justify="center" alignItems="center" >
       <div>
         <ButtonAppBar />
-        <TextFieldSizes />
+        <TextFieldSizes handleDogChange = {handleDogChange} />
         <DiscreteSlider />
 
         <Link to='/dogschedule'>
-        <IconLabelButtonsProfile/>
+        <IconLabelButtonsProfile handleDogSubmit ={handleDogSubmit} />
         </Link>
         
         

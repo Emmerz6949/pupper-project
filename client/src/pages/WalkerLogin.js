@@ -18,7 +18,11 @@ const useStyles = makeStyles((theme) => ({
     }
 })); 
 
-function Walker() { 
+
+
+function WalkerLogin() { 
+    const classes = useStyles(); 
+
     //set component initial state
     const [loginObject, setLoginObject] = useState({email: '', password: ''}); 
 
@@ -42,22 +46,16 @@ function Walker() {
         }
     }
 
-
-}
-
-function WalkerLogin() { 
-    const classes = useStyles(); 
-
     return(
         <Container maxWidth> 
         
             <div className = {classes.page}>
                 <LoginBar />
                 <SignInPara />
-                <LoginTextFields />
+                <LoginTextFields handleLoginChange = {handleLoginChange} />
 
                 <Link to='/walkerprofile'>
-                <LoginButton />
+                <LoginButton handleLoginSubmit = {handleLoginSubmit}/>
                 </Link>
                 
 
