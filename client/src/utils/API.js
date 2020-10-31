@@ -40,12 +40,12 @@ export default {
         return axios.post("/api/walker_signup", signupInfo);
     },
     walker_profile: function (profileInfo) {
-        return axios.put("/api/walker_profile", profileInfo);
+        return axios.put("/api/add_walker_profile", profileInfo);
     },
     walker_data: function (dataInfo) {
         return axios.get("/api/walker_data", dataInfo);
     },
     walker_schedule: function (scheduleInfo) {
-        return axios.put("/api/walker_schedule", scheduleInfo);
+        return axios.put("/api/add_walker_schedule", scheduleInfo);
     }
 }

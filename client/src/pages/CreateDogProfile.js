@@ -35,7 +35,7 @@ function CreateDogProfile() {
   }
 
   //upon submit
-  const handleDogSubmit = (event) => { 
+  const handleInputSubmit = (event) => { 
     event.preventDefault(); 
 
     if (dogObj.dogName && dogObj.zipCode && dogObj.email) { 
@@ -58,9 +58,9 @@ function CreateDogProfile() {
         <CreateProfileBar />
         <TextFieldSizes handleDogChange = {handleDogChange} />
         <center>
-        <DiscreteSlider />
+        <DiscreteSlider handleDogChange = {handleDogChange}/>
         <Link to='/dogprofile'>
-        <IconLabelButtonsProfile handleDogSubmit ={handleDogSubmit} />
+        <IconLabelButtonsProfile handleInputSubmit ={handleInputSubmit} />
         </Link>
         </center>
       </div>
