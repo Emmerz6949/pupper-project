@@ -37,7 +37,7 @@ const Walker = sequelize.define("Walker", {
     },
 
     dogSize: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true
     }
 

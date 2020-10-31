@@ -24,7 +24,7 @@ const Owner = sequelize.define("Owner", {
     },
 
     dogSize: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true
     },
 
