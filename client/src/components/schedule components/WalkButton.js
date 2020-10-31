@@ -19,7 +19,6 @@ export default function WalkButton() {
                 className={classes.root} 
                 variant = 'contained'
                 color = 'primary'
-                fullWidth
                 type = 'submit'>
     
                 Go For A Walk 

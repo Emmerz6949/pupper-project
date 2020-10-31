@@ -5,8 +5,10 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'; 
+import Splash from '../src/pages/Splash'; 
 import SignUp from '../src/pages/SignUp';
-import Login from '../src/pages/login';
+import WalkerLogin from './pages/WalkerLogin';
+import DogLogin from './pages/DogLogin'; 
 import DogSchedule from '../src/pages/DogSchedule'; 
 import WalkerSchedule from '../src/pages/WalkerSchedule';
 import CreateDogProfile from '../src/pages/CreateDogProfile'; 
@@ -17,21 +19,28 @@ import DogProfile from '../src/pages/DogProfile';
 ReactDOM.render(
   <Router>
 
-    <Route exact path='/login' component={Login} />
+    <Switch>
+      <Route exact path= '/' component={Splash} />
 
-    <Route path='/signup' component={SignUp} />
+      <Route path='/doglogin' component={DogLogin} />
 
-    <Route path='/dogprofile' component={DogProfile} />
+      <Route  path='/walkerlogin' component={WalkerLogin} />
 
-    <Route path='/walkerprofile' component={WalkerProfile} />
+      <Route path='/signup' component={SignUp} />
 
-    <Route path='/walkerschedule' component={WalkerSchedule} />
+      <Route path='/dogprofile' component={DogProfile} />
 
-    <Route path='/dogschedule' component={DogSchedule} />
+      <Route path='/walkerprofile' component={WalkerProfile} />
 
-    <Route path='/createdog' component={CreateDogProfile} />
+      <Route path='/walkerschedule' component={WalkerSchedule} />
 
-    <Route path='/createwalker' component={CreateWalkerProfile} />
+      <Route path='/dogschedule' component={DogSchedule} />
+
+      <Route exact path='/createdog' component={CreateDogProfile} />
+
+      <Route exact path='/createwalker' component={CreateWalkerProfile} />
+    </Switch>
+
   </Router>, 
 
   document.getElementById('root')

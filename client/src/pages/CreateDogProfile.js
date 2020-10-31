@@ -7,7 +7,7 @@ import IconLabelButtonsProfile from "../components/button.js";
 import ButtonAppBar from "../components/appBar.js";
 import DiscreteSlider from "../components/dogSize.js";
 import Grid from '@material-ui/core/Grid';
-
+import { Link } from 'react-router-dom'; 
 
 
 function CreateDogProfile() {
@@ -19,8 +19,10 @@ function CreateDogProfile() {
         <TextFieldSizes />
         <DiscreteSlider />
 
- 
+        <Link to='/dogschedule'>
         <IconLabelButtonsProfile/>
+        </Link>
+        
         
         
           
