@@ -11,6 +11,8 @@ import SplashDogButton from '../components/SplashDogButton.js';
 import Pupper_logo_splash_01 from '../Pupper_logo_splash_01.svg';
 import SplashWalkerButton from '../components/SplashWalkerButton';
 import SplashCreateButton from '../components/SplashCreateButton';
+import { Link } from 'react-router-dom'; 
+
 
 function Splash() {
   return (
@@ -24,9 +26,19 @@ function Splash() {
 
 <center><img class="Splash-image" src={Pupper_logo_splash_01} alt="A"/></center>
 
+<Link to= '/doglogin'>
 < SplashDogButton/>
+</Link>
+
+<Link to='/walkerlogin'>
 < SplashWalkerButton/>
+</Link>
+
+
+<Link to='/signup'>
 < SplashCreateButton/>
+</Link>
+
 </div>
 
 
