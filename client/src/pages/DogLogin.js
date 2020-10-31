@@ -57,8 +57,10 @@ function SignIn() {
                 <LoginButton handleLoginSubmit = {handleLoginSubmit}/>
                 </Link>
                 
-
+                <Link to='/signup'>
                 <SignInFooter />
+                </Link>
+
             </div> 
         </Container>
     )

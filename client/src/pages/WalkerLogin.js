@@ -58,8 +58,10 @@ function WalkerLogin() {
                 <LoginButton handleLoginSubmit = {handleLoginSubmit}/>
                 </Link>
                 
-
+                <Link to='/signup'>
                 <SignInFooter />
+                </Link>
+                
             </div> 
         </Container>
     )
