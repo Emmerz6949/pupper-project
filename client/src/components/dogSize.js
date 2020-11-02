@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
-import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,10 +34,6 @@ const marks = [
   },
   
 ];
-
-function valuetext(value) {
-  return `${value}°C`;
-}
 
 export default function DiscreteSlider() {
   const classes = useStyles();
