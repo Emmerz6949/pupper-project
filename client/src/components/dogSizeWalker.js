@@ -39,10 +39,6 @@ const marks = [
   
 ];
 
-function valuetext(value) {
-  return `${value}°C`;
-}
-
 export default function DiscreteSliderWalker() {
   const classes = useStyles();
 
